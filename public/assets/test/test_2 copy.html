@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <style>
+    #div_bg_image {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url("https://i.ytimg.com/vi/er416Ad3R1g/maxresdefault.jpg");
+    }
+
+    /* all of the styling you see above is almost completely unecesssary. the only requirements are to make sure the div you're trying to affect is big enough to be visible. so if you don't set a height/width or have your div wrapped around something that doesn't have its own height, you won't see any changes because the div in question will be invisible! */
+
+    /* while not neccessary for the code to run you should set the background image to be the first image in the picture_index array. I've done this in the css above.  this completes the illusion of a cycling image gallery. */
+
+
+    .killer {
+      font-size: 10rem;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- My pens are made to be EASY & USER FRIENDLY! Not everyone that ends up on Codepen at 3am looking for an answer is pro full stack dev with years of MVC/best practices experience. They could be like me; desperately trying to find any answer they can understand so there are plenty of notes here! -->
+
+  <div id="div_bg_image">
+
+
+  </div>
+
+  <!-- you can technically place the onClick calls inside any visible div you want to call the image_bg_cycle function from. if you do this i'd HIGHLY suggest you place the onClick's in divs that have an #id. javascript targeting classes is a pin in most cases AND you'd have to change the javascript I provided to target classes. -->
+
+  <!-- you can change 'left' and 'right' to w/e you want as well. If you change 'left' to 'taco' you have to replace all 'left' instances to 'taco' in the javascript. -->
+</body>
+
+</html>

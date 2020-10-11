@@ -1,0 +1,190 @@
+:root {
+	--primarycolor: #4680ff;
+}
+/* your styles go here */
+
+.header {
+	position: fixed !important;
+	width: 100%;
+	z-index: 100;
+	margin-bottom: 200px;
+}
+
+.bg-yellow {
+	background-color: #eca73f !important;
+}
+
+img {
+	border-radius: 100%;
+}
+
+li {
+	text-decoration: none !important;
+	/* color: white !important; */
+}
+
+ul {
+	list-style-type: none !important;
+}
+
+strong {
+	color: #6c757d !important;
+}
+
+/* CALENDAR */
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.clearfix::after,
+.calendar ol::after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/* ================
+Calendar Styling */
+.calendar {
+	border-radius: 10px;
+	background-color: #fdfdfd;
+}
+
+.month {
+	font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+	.month {
+		font-size: 3.5rem;
+	}
+}
+
+.calendar ol li {
+	float: left;
+	width: 14.28571%;
+}
+
+.calendar .day-names {
+	border-bottom: 1px solid #eee;
+}
+
+.calendar .day-names li {
+	text-transform: uppercase;
+	margin-bottom: 0.5rem;
+}
+
+.calendar .days li {
+	border-bottom: 1px solid #eee;
+	min-height: 8rem;
+}
+
+.calendar .days li .date {
+	margin: 0.5rem 0;
+}
+
+.calendar .days li .event {
+	font-size: 0.75rem;
+	padding: 0.4rem;
+	color: white;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-radius: 4rem;
+	margin-bottom: 1px;
+}
+
+.calendar .days li .event.span-2 {
+	width: 200%;
+}
+
+.calendar .days li .event.begin {
+	border-radius: 1rem 0 0 1rem;
+}
+
+.calendar .days li .event.end {
+	border-radius: 0 1rem 1rem 0;
+}
+
+.calendar .days li .event.clear {
+	background: none;
+}
+
+.calendar .days li:nth-child(n + 29) {
+	border-bottom: none;
+}
+
+.calendar .days li.outside .date {
+	color: #ddd;
+}
+
+.badge-pill {
+	font-size: 14px !important;
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+/* BUTTON */
+
+input[type="submit"],
+.btn,
+.btn-prmary {
+	color: #ffffff !important;
+	background: transparent;
+}
+
+/* Mes bulletins de paie STYLE */
+
+.btn:not([class*="outline"]) {
+	color: var(--primarycolor) !important;
+}
+
+.btn:not([class*="outline"]):hover,
+.btn:not([class*="outline"]):focus {
+	color: #ffffff !important;
+	background: var(--primarycolor);
+}
+
+/* Mes bulletins de paie STYLE */
+
+/* ADMIN STYLE */
+
+/* .showcase {
+	position: relative;
+	background: url("../img/showcase.jpg") center/cover;
+	background-repeat: no-repeat;
+	min-height: 74vh;
+	margin-top: 10px;
+	text-align: center;
+	color: #fff;
+} */
+
+.showcase {
+	background-image: url("../img/showcase.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.dark-overlay {
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ADMIN STYLE */

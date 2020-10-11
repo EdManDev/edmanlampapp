@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test 3</title>
+  <!-- Bootstrap CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.js"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/moment.min.js"></script>
+</head>
+
+<body>
+  <!-- Good Default setup -->
+  <!-- <div class="container mt-5 mb-5" style="width: 400px">
+    <input type="test" id="picker" class="form-control" data-="">
+  </div> -->
+
+  <!-- Call back Range picker -->
+  <div class="container mt-5 mb-5" style="width: 400px">
+    <input type="text" id="picker" class="form-control" value="04/12/2019" />
+    <p><br /></p>
+    <p>Start Date: <b id="start">00 / 00 / 2020</b></p>
+    <p>End Date: <b id="end">00 / 00 / 2020</b></p>
+
+  </div>
+
+
+</body>
+
+
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js"></script>
+
+
+
+<script>
+  ////-----------------------------------------
+  ////start
+  // $("#picker").daterangepicker({});
+  ////-----------------------------------------
+
+  ////-----------------------------------------
+  //// Date range Picker
+  //// $("#picker").daterangepicker({
+  ////   autoApply: true,
+  ////   startDate: '04/12/2020',
+  ////   endDate: '20/10/2020',
+  //// });
+  ////-----------------------------------------
+
+  ////-----------------------------------------
+  //// date time range picker with date 
+  //// $("#picker").daterangepicker({
+  ////   timePicker: true,
+  ////   startDate: moment().startOf('hour'),
+  ////   endDate: moment().startOf('hour').add(32, 'hour'),
+  ////   locale: {
+  ////     format: 'M/DD hh:mm A'
+  ////   }
+  //// });
+  ////-----------------------------------------
+
+  //-----------------------------------------
+  // Call back Range picker
+  $('#picker').daterangepicker({
+    opens: 'left',
+  }, function (start, end, label, e) {
+    $('#start').text(start.format('DD-MM-YYYY'))
+    $('#end').text(end.format('DD-MM-YYYY'))
+  }).on('changeDate', function (e) {
+    var start = moment(e.date);
+    var end = moment(new Date());
+    var diff = start.diff(end, 'days'); // returns correct number
+    $('#diffInput').val(diff); // doesn't seem to have any effect
+  });;
+  //-----------------------------------------
+
+//   //-----------------------------------------
+//   // Predefined range Picker
+//   $('#picker').daterangepicker({
+//     startDate: moment().subtract(29, 'days'),
+//     endDate: moment(),
+//     ranges: {
+//       'Today': [moment(), moment()],
+//       'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+//       'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+//       'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+//       'This Month': [moment().startof('month'), moment().endof('month')],
+//       'Last Month': [moment().subtract(1, 'month').startof('month'), moment().subtract(1, 'month').endof('month')]
+//     }
+//   }, function (start, end) {
+//     $('#date').html(start.format('MMMM DD, YY') + ' - ' + end.format('MMMM DD, YY'))
+//   });
+
+//   $('#date').html(moment().subtract(29, 'days').format('MMMM DD, YY') + ' - ' + moment().format('MMM, DD, YY'))
+// //-----------------------------------------
+
+</script>
+
+</html>

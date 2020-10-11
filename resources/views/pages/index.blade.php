@@ -9,19 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="all,follow" />
   <!-- Bootstrap CSS-->
-  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
   <!-- Font Awesome CSS-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
   <!-- Google fonts - Popppins for copy-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800" />
   <!-- orion icons-->
-  <link rel="stylesheet" href="css/orionicons.css" />
+  <link rel="stylesheet" href="assets/css/orionicons.css" />
   <!-- theme stylesheet-->
-  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.default.css" id="theme-stylesheet" />
   <!-- Custom stylesheet - for your changes-->
-  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
   <!-- Favicon-->
-  <link rel="shortcut icon" href="img/favicon.png?3" />
+  <link rel="shortcut icon" href="assets/assets/assets/img/favicon.png?3" />
   <!-- Tweaks for older IEs-->
   <!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -30,11 +30,16 @@
 </head>
 
 <body>
+
+
   <!-- navbar-->
   <header class="header">
     <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
       <a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-bars"></i></a><a
-        href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base">Acces intranet</a>
+        href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base">Acces intranet
+      </a>
+      @extends('layout.navbar')
+
       <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
         <li class="nav-item">
           <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -96,8 +101,8 @@
         </li>
         <li class="nav-item dropdown ml-auto">
           <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            class="nav-link dropdown-toggle"><img src="img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;"
-              class="img-fluid rounded-circle shadow" /></a>
+            class="nav-link dropdown-toggle"><img src="assets/img/avatar-6.jpg" alt="Jason Doe"
+              style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow" /></a>
           <div aria-labelledby="userInfo" class="dropdown-menu">
             <a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">BONJOUR JD
               </strong><small>Employer</small></a>
@@ -529,33 +534,22 @@
         </section>
 
       </div>
-      <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-left text-primary">
-              <p class="mb-2 mb-md-0">Edman &copy; 2020-future</p>
-            </div>
-            <div class="col-md-6 text-center text-md-right text-gray-400">
-              <p class="mb-0">
-                Design by
-                <a href="https://#/admin-templates" class="external text-gray-400">EdManDev</a>
-              </p>
-              <!-- Please do not remove the backlink to us unless you support further theme's development at https://#/donate. It is part of the license conditions. Thank you for understanding :)-->
-            </div>
-          </div>
-        </div>
+      <footer>
+
+
+        @extends('layout.footer')
       </footer>
     </div>
   </div>
   <!-- JavaScript files-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="vendor/popper.js/umd/popper.min.js"></script>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/vendor/popper.js/umd/popper.min.js"></script>
   <!-- <script src="vendor/jquery.cookie/jquery.cookie.js"></script>
 	<script src="vendor/chart.js/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 	<script src="js/charts-home.js"></script> -->
-  <script src="js/front.js"></script>
+  <script src="assets/js/front.js"></script>
 </body>
 
 </html>

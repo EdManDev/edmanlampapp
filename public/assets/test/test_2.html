@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test 2</title>
+  <!-- Bootstrap CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.js"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/moment.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js"></script>
+  <!-- datepicker -->
+
+</head>
+
+<body>
+
+  <!-- Call back Range picker with number of day-->
+  <div class="container mt-5 mb-5">
+    <input type="text" id="picker" class="form-control" />
+    <br>
+    <div><strong> Start Date: </strong>
+      <span id="start">00/00/2020</span>
+    </div>
+    <br>
+    <div><strong>End Date: </strong>
+      <span id="end">00/00/2020</span>
+    </div>
+    <br>
+    <div> <strong> Number of Days: </strong>
+      <span><input id="diffInput" style="border-color: transparent"></span>
+    </div>
+  </div>
+
+
+</body>
+
+<!-- Botstrap -->
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js"></script>
+
+<script>
+
+  //-----------------------------------------
+  // Call back Range picker
+  moment.locale('fr');
+  $('#picker').daterangepicker({
+    opens: 'left',
+    language: "fr",
+    calendarWeeks: true,
+    todayHighlight: true,
+    autoclose: true,
+  }, function (start, end, label) {
+    $('#start').text(start.format('YYYY/MM/DD'))
+    $('#end').text(end.format('YYYY/MM/DD'))
+    var diff = end.diff(start, 'days') + 1; // returns correct number
+    $('#diffInput').val(diff); // doesn't seem to have any effect
+  })
+  //-----------------------------------------
+</script>
+
+</html>
